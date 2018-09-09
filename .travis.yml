@@ -4,9 +4,15 @@ services:
 
 script:
   - make build
-
-script:
-  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker images
-  - make tag
-  - make push
+
+jobs:
+include:
+  - stage: deploy
+    if: branch = master
+    install: skip
+    script:
+    - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+    - docker images
+    - make tag
+    - make push
