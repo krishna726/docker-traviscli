@@ -14,6 +14,8 @@ build:
 
 tag:
 	docker tag $(DOCKER_IMAGE):$(TAG) $(DOCKER_USERNAME)/$(DOCKER_IMAGE):$(TAG)
+	docker tag $(DOCKER_USERNAME)/$(DOCKER_IMAGE):$(TAG) $(DOCKER_USERNAME)/$(DOCKER_IMAGE):latest
 
 push:
 	docker push $(DOCKER_USERNAME)/$(DOCKER_IMAGE):$(TAG)
+	docker push $(DOCKER_USERNAME)/$(DOCKER_IMAGE):latest
