@@ -1,6 +1,6 @@
 # Another docker-traviscli
 
-[![](https://travis-ci.org/wenlock/docker-traviscli.svg?branch=master)](https://travis-ci.org/wenlock/docker-traviscli)
+[![](https://travis-ci.com/wenlock/docker-traviscli.svg?branch=master)](https://travis-ci.com/wenlock/docker-traviscli)
 
 Lets build another travis cli tool for docker so we can hack. :tada:
 
