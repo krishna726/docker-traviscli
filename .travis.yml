@@ -2,13 +2,13 @@ sudo: required
 services:
   - docker
 
-stages:
-  - test
-  - deploy
-
 script:
   - make build
   - docker images
+
+stages:
+  - test
+  - deploy
 
 jobs:
   include:
