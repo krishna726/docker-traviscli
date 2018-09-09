@@ -2,6 +2,10 @@ sudo: required
 services:
   - docker
 
+stages:
+  - test
+  - deploy
+
 script:
   - make build
   - docker images
@@ -12,7 +16,7 @@ include:
     if: branch = master
     install: skip
     script:
-    - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-    - docker images
-    - make tag
-    - make push
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker images
+      - make tag
+      - make push
