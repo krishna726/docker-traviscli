@@ -12,7 +12,7 @@ Here is some instructions on how to use it.
 For example:
 
 ```
-eval $(docker run --rm travis:1.1 init)
+eval $(docker run --rm wenlock/traviscli:latest init)
 travis help
 ```
 
@@ -23,14 +23,14 @@ travis help
 
 ### Test it
 ```
-eval $(docker run --rm travis:1.1 init)
+eval $(docker run --rm wenlock/traviscli:latest init)
 travis test
 ```
 
 ### Shell
 Start a shell with
 ```
-eval $(docker run --rm travis:1.1 init)
+eval $(docker run --rm wenlock/traviscli:latest init)
 travis shell
 ```
 
