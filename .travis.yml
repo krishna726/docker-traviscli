@@ -1,0 +1,12 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - make build
+
+script:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker images
+  - make tag
+  - make push
