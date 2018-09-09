@@ -17,5 +17,6 @@ tag:
 	docker tag $(DOCKER_USERNAME)/$(DOCKER_IMAGE):$(TAG) $(DOCKER_USERNAME)/$(DOCKER_IMAGE):latest
 
 push:
+	echo "push $(DOCKER_USERNAME)/$(DOCKER_IMAGE):$(TAG) and latest"
 	docker push $(DOCKER_USERNAME)/$(DOCKER_IMAGE):$(TAG)
 	docker push $(DOCKER_USERNAME)/$(DOCKER_IMAGE):latest
