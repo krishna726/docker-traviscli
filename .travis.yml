@@ -10,8 +10,8 @@ after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker images
   - make tag
-  - if [ "${TRAVIS_BRANCH}" = "master" ]; then \
-        make push; \
-      else \
-        echo "skipping push for ${TRAVIS_BRANCH}"; \
-      fi;
+  - if [ "${TRAVIS_BRANCH}" = "master" ]; then
+      make push;
+    else
+      echo "skipping docker push for ${TRAVIS_BRANCH}";
+    fi;
