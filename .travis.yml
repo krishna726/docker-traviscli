@@ -2,21 +2,16 @@ sudo: required
 services:
   - docker
 
-stages:
-  - test
-  - deploy
+script:
+  - make build
+  - docker images
 
-jobs:
-  include:
-    - stage: test
-      script:
-        - make build
-        - docker images
-    - stage: deploy
-      if: branch = master
-      install: skip
-      script:
-        - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-        - docker images
-        - make tag
-        - make push
+deploy:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker images
+  - make tag
+  - if [ "${TRAVIS_BRANCH}" = "master" ]; then
+      make push
+    else
+      echo "skipping push for ${TRAVIS_BRANCH}"
+    fi
