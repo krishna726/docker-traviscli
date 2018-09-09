@@ -6,7 +6,7 @@ script:
   - make build
   - docker images
 
-deploy:
+after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker images
   - make tag
