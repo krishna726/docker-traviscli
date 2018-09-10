@@ -10,7 +10,10 @@ DOCKER_IMAGE ?= traviscli
 default: build
 
 build:
-	docker build --build-arg DOCKER_IMAGE="$(DOCKER_IMAGE)" --build-arg TAG="$(TAG)" -t $(DOCKER_IMAGE):$(TAG) .
+	docker build \
+	             --build-arg DOCKER_IMAGE="$(DOCKER_USERNAME)/$(DOCKER_IMAGE)" \
+	             --build-arg TAG="$(TAG)" \
+	             -t $(DOCKER_IMAGE):$(TAG) .
 
 tag:
 	docker tag $(DOCKER_IMAGE):$(TAG) $(DOCKER_USERNAME)/$(DOCKER_IMAGE):$(TAG)
