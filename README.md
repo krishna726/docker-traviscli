@@ -41,4 +41,4 @@ Want to help me, wow cool!
 Fork this repo and submit a PR :D
 
 ## Licensing
-[MIT](LICENSE.txt)
+[MIT](LICENSE)
